@@ -25,6 +25,8 @@ def scrape_data():
         new_soup = BeautifulSoup(new_webpage.content, "html.parser")
         try:
             title = new_soup.find("span", attrs = {'class':"LMizgS"}).text.strip()
+            title = title.split("-")
+            title = title[0]
             price = new_soup.find("div",attrs={'class': "hZ3P6w bnqy13"}).text.strip()
             price = price[1::]
             price = price.split(",")
