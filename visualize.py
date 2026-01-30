@@ -25,26 +25,24 @@ def make_plots():
     # Helper function to place text inside the bars
     def label_inside_bars(ax, labels):
         for i, (bar, label) in enumerate(zip(ax.patches, labels)):
-            # Offset text slightly to the right of the bar start
             ax.text(
-                bar.get_width() * 0.02, # 2% offset from the left edge of the bar
+                bar.get_width() * 0.02,
                 bar.get_y() + bar.get_height()/2,
                 f"{label}",
                 va='center',
                 ha='left',
                 fontsize=9,
                 fontweight='bold',
-                color='black' # Contrast color for dark bars
+                color='black'
             )
 
     # --- GRAPH 1: Top 10 Cheapest Gaming Laptops ---
     plt.figure()
     cheapest = df.sort_values(by="Price").head(10)
-    # Use a dark palette so white text is readable
     ax1 = sns.barplot(x="Price", y="Name", data=cheapest, palette="Blues_d")
     
     label_inside_bars(ax1, cheapest["Name"])
-    ax1.set_yticklabels([]) # Hide the external y-axis names
+    ax1.set_yticklabels([])
     
     plt.title("Top 10 Cheapest Gaming Laptops", fontsize=16, pad=20, fontweight='bold')
     plt.xlabel("Price (₹)", fontsize=12)
@@ -70,7 +68,6 @@ def make_plots():
 
     # --- GRAPH 3: Price vs Rating Relationship ---
     plt.figure()
-    # Adding a regression line to show the trend
     sns.regplot(x="Price", y="Ratings", data=df,
                 scatter_kws={'alpha':0.6, 'color':'teal'},
                 line_kws={'color':'orange'})
@@ -84,7 +81,6 @@ def make_plots():
 
     # --- GRAPH 4: Price Distribution ---
     plt.figure()
-    # Using a histogram with a Kernel Density Estimate (KDE) curve
     sns.histplot(df["Price"], bins=15, kde=True, color="purple")
     
     plt.title("Gaming Laptop Price Distribution", fontsize=16, fontweight='bold')
