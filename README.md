@@ -30,7 +30,7 @@ This project builds an automated data pipeline to:
 ## 📊 Sample Charts
 
 ### Top 10 Cheapest Laptops
-![Cheapest](data/cheapest_laptops.png)
+![Cheapest](data/cheapest_laptop.png)
 
 ### Price vs Rating
 ![Price vs Rating](data/price_vs_rating.png)
