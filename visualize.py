@@ -17,11 +17,9 @@ def make_plots():
         print("Warning: The dataset is empty. Check your scraper logic or filters.")
         return
 
-    # Set Global Professional Theme
     sns.set_theme(style="white")
     plt.rcParams['figure.figsize'] = (12, 8)
     
-    # Helper function to place text inside the bars
     def label_inside_bars(ax, labels):
         for i, (bar, label) in enumerate(zip(ax.patches, labels)):
             ax.text(
@@ -35,7 +33,7 @@ def make_plots():
                 color='black'
             )
 
-    # --- GRAPH 1: Top 10 Cheapest Gaming Laptops ---
+    #GRAPH 1: Top 10 Cheapest Gaming Laptops
     plt.figure()
     cheapest = df.sort_values(by="Price").head(10)
     ax1 = sns.barplot(x="Price", y="Name", data=cheapest, palette="Blues_d")
@@ -50,7 +48,7 @@ def make_plots():
     plt.savefig("data/cheapest_laptop.png", dpi=300)
     plt.close()
 
-    # --- GRAPH 2: Top 10 Best Value Laptops ---
+    #GRAPH 2: Top 10 Best Value Laptops
     plt.figure()
     best_value = df.sort_values(by="value_score", ascending=False).head(10)
     ax2 = sns.barplot(x="value_score", y="Name", data=best_value, palette="Reds_d")
@@ -65,7 +63,7 @@ def make_plots():
     plt.savefig("data/best_value_laptops.png", dpi=300)
     plt.close()
 
-    # --- GRAPH 3: Price vs Rating Relationship ---
+    #GRAPH 3: Price vs Rating Relationship
     plt.figure()
     sns.regplot(x="Price", y="Ratings", data=df,
                 scatter_kws={'alpha':0.6, 'color':'teal'},
@@ -78,7 +76,7 @@ def make_plots():
     plt.savefig("data/price_vs_rating.png", dpi=300)
     plt.close()
 
-    # --- GRAPH 4: Price Distribution ---
+    #GRAPH 4: Price Distribution
     plt.figure()
     sns.histplot(df["Price"], bins=15, kde=True, color="purple")
     
