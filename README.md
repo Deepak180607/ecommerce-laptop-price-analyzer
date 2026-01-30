@@ -27,10 +27,6 @@ This project builds an automated data pipeline to:
 - `data/cleaned_laptops.csv`
 - Charts in `data/` folder
 
-## ▶ How to Run
-```bash
-pip install -r requirements.txt
-python main.py
 ## 📊 Sample Charts
 
 ### Top 10 Cheapest Laptops
@@ -44,3 +40,10 @@ python main.py
 
 ### Best Value Laptops
 ![Best Value](data/best_value_laptops.png)
+
+
+## ▶ How to Run
+```bash
+pip install -r requirements.txt
+python main.py
+
