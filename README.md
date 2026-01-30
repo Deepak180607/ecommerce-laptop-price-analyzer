@@ -39,7 +39,7 @@ This project builds an automated data pipeline to:
 ![Distribution](data/price_distribution.png)
 
 ### Best Value Laptops
-![Best Value](data/best_value_laptops.png)
+![Best Value](data/best_value_laptop.png)
 
 
 ## ▶ How to Run
