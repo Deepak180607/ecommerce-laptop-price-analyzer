@@ -44,6 +44,10 @@ This project builds an automated data pipeline to:
 
 ## ▶ How to Run
 ```bash
-pip install -r requirements.txt
+pip install pandas
+pip install matplotlib
+pip install seaborn
+pip install requests
+pip install BeautifulSoup
 python main.py
 
