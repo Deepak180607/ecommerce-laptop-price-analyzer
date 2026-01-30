@@ -6,7 +6,6 @@ import os
 def make_plots():
     # 1. Load Data with error handling
     try:
-        # Using relative paths for better portability
         base_path = os.path.dirname(os.path.abspath(__file__))
         file_path = os.path.join(base_path, "data", "cleaned_laptop.csv")
         df = pd.read_csv(file_path)
