@@ -28,11 +28,11 @@ def make_plots():
             # Offset text slightly to the right of the bar start
             ax.text(
                 bar.get_width() * 0.02, # 2% offset from the left edge of the bar
-                bar.get_y() + bar.get_height()/2, 
-                f"{label}", 
-                va='center', 
-                ha='left', 
-                fontsize=9, 
+                bar.get_y() + bar.get_height()/2,
+                f"{label}",
+                va='center',
+                ha='left',
+                fontsize=9,
                 fontweight='bold',
                 color='black' # Contrast color for dark bars
             )
@@ -63,7 +63,7 @@ def make_plots():
     
     plt.title("Top 10 Best Value Laptops (Rating/Price)", fontsize=16, pad=20, fontweight='bold')
     plt.xlabel("Value Score", fontsize=12)
-    plt.ylabel("") 
+    plt.ylabel("")
     plt.tight_layout()
     plt.savefig("data/best_value_laptops.png", dpi=300)
     plt.close()
@@ -71,8 +71,8 @@ def make_plots():
     # --- GRAPH 3: Price vs Rating Relationship ---
     plt.figure()
     # Adding a regression line to show the trend
-    sns.regplot(x="Price", y="Ratings", data=df, 
-                scatter_kws={'alpha':0.6, 'color':'teal'}, 
+    sns.regplot(x="Price", y="Ratings", data=df,
+                scatter_kws={'alpha':0.6, 'color':'teal'},
                 line_kws={'color':'orange'})
     
     plt.title("Relationship: Price vs Rating", fontsize=16, fontweight='bold')
